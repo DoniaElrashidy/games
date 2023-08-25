@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@500&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        .container{
+            text-align: center;
+            /* background-color: aqua; */
+            /* height: 100%; */
+            /* position: relative; */
+        }
+        .info{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            /* background-color: aquamarine; */
+            width: 100%;
+        }
+        .info h1{
+            font-size: 4vw;
+        }
+        .info h3{
+            font-size: 2vw;
+        }
+        body{
+           background: #dd5353;
+           color: white;
+           margin: 0;
+           padding: 0;
+           font-family: 'Press Start 2P', cursive;
+           /* overflow: hidden;      */
+        }
+
+        .images{
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        .images img{
+            width: 100px;
+        }
+        #music{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 200px;
+        }
+        #mario{
+            position: absolute;
+            transform: rotate(180deg);
+            width: 10vw;
+            right: 6vw;
+            /* margin-left: 500px; */
+        }
+        #minecraft{
+            position: absolute;
+            /* left: 0; */
+            top: 10vh;
+            width: 40vw;
+            left: -10vw;
+            
+        }
+        #heart{
+            position: absolute;
+          
+        }
+        #hb{
+            position: absolute;
+            bottom: 4vh;
+            width: 25vw;
+            right: 3vw;
+
+        }
+        input{
+            width: 30vw;
+            padding: 15px;
+            border-radius: 30px;
+            border: none;
+           font-family: 'Press Start 2P', cursive;
+           background-color:rgba(255, 255, 255, 0.663);
+
+        }
+        .info img:hover{
+           background-image: url(images/on.png);
+           cursor: pointer;
+        }
+        .figure {
+    position: absolute;
+    width: 90px;
+    max-width: 100%;
+    bottom: 30px;
+    left: 475px;
+  }
+ 
+  #btn{
+    padding:5vw;
+    position: relative;
+    /* margin-right:100px; */
+    border: none;
+    border-radius: 68px;
+    background-color: transparent;
+    /* background-color: peru; */
+    background-image: url(images/off.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  #btn:hover{
+    background-image: url(images/on.png);
+    cursor: pointer;
+  }
+  #warning{
+   /* position: absolute; */
+   /* right: 50px; */
+   /* top: 285px; */
+   color: rgb(239, 185, 185);
+  }
+  @media (max-width: 782px){
+    .info h1{
+            font-size: 7vw;
+        }
+    .info h3{
+            font-size: 3vw;
+        }
+        #mario{
+            width: 20vw;
+        }
+        #minecraft{
+            width: 60vw;
+            top: 35%;
+        }
+        #hb{
+            width: 40vw;
+        }
+        input{
+            width: 50vw;
+        }
+        #btn{
+            padding: 10vw;
+
+        }
+  }
+
+    </style>
+</head>
+<body>
+        <div class="container" >
+        <div class="info">
+            <form action="games.html" method="get" id="myform">
+                <br>
+            <h1>Welcome!</h1>
+            <h3>please enter your email</h3>
+           <input type="text" name="name" id="email-input" > 
+           <h3 id="warning"></h3>
+           <games></games>
+           <br><br>
+           <button type="submit" id="btn"></button>
+
+        </form>
+    <!-- <h1 id="result">your username is </h1>  -->
+    </div>
+     </div>
+    <div class="images">
+             <!-- <img src="images/music.gif" alt="" id="music"> -->
+             <img src="images/minecraft.gif" alt="" id="minecraft">
+             <img src="images/mario.gif" alt="" id="mario">
+             <img src="images/health.gif" alt="" id="hb">
+
+    </div>
+    </div>
+    <script>
+        document.getElementById("myform").addEventListener("submit",function(event)
+        {
+            var emailinput = document.getElementById("email-input").value;
+            if (emailinput.indexOf("@")===-1){
+                event.preventDefault();
+                document.getElementById("warning").textContent="Invalid email";
+            }
+        })
+    </script>
+
+<script src="https://scripts.sirv.com/sirvjs/v3/sirv.js"></script>
+</body>
+</html>
